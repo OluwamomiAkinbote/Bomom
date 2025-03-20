@@ -15,10 +15,10 @@ SECRET_KEY = 'django-insecure-p!r)t$25l!o1_c$v%xy$)q03_emsaqq5n0asq9)gi&0)+3l0bu
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['localhost', 'bomom-production.up.railway.app']
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # React frontend URL
+    "http://localhost:3000", "https://bomom-fe.vercel.app" # React frontend URL
 ]
 # Application definition
 
@@ -86,8 +86,12 @@ WSGI_APPLICATION = 'crm.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'bgFAidSVmiDRltRweuXhrdluSMcnjsaO',
+        'HOST': 'nozomi.proxy.rlwy.net',
+        'PORT': '38942',
     }
 }
 
